@@ -1,0 +1,246 @@
+/**
+ * 900.care Design System — Colors & Typography
+ *
+ * Source: Design system/Source/app/styles/theme.css (Tailwind v4 @theme)
+ * All colors preserved as OKLCH; hex in comments for reference.
+ * Fonts served from Shopify CDN (same as production).
+ */
+
+/* =====================================
+   FONTS — local files under /fonts
+   Poppins (body) + GT-Ultra Standard (display/headings)
+   Relative URLs work from the project root; preview/*.html and ui_kits/*/index.html
+   use ../ paths so these resolve correctly from both levels.
+   ===================================== */
+@font-face {
+  font-family: 'Poppins'; font-weight: 300; font-style: normal; font-display: swap;
+  src: url('fonts/Poppins-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins'; font-weight: 400; font-style: normal; font-display: swap;
+  src: url('fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins'; font-weight: 500; font-style: normal; font-display: swap;
+  src: url('fonts/Poppins-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins'; font-weight: 600; font-style: normal; font-display: swap;
+  src: url('fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Poppins'; font-weight: 700; font-style: normal; font-display: swap;
+  src: url('fonts/Poppins-Bold.ttf') format('truetype');
+}
+/* GT-Ultra Standard — Bold (700) + Ultra (900). woff2 preferred, woff fallback. */
+@font-face {
+  font-family: 'GT-Ultra'; font-weight: 700; font-style: normal; font-display: swap;
+  src: url('fonts/GT-Ultra-Standard-Bold.woff2') format('woff2'),
+       url('fonts/GT-Ultra-Standard-Bold.woff')  format('woff');
+}
+@font-face {
+  font-family: 'GT-Ultra'; font-weight: 900; font-style: normal; font-display: swap;
+  src: url('fonts/GT-Ultra-Standard-Ultra.woff2') format('woff2'),
+       url('fonts/GT-Ultra-Standard-Ultra.woff')  format('woff');
+}
+
+:root {
+  /* ================= BRAND COLOR SCALES ================= */
+
+  /* Pink — brand primary */
+  --color-pink-darker: oklch(0.4 0.15 350);   /* #991A4F */
+  --color-pink-dark:   oklch(0.5 0.22 350);   /* #CC0063 */
+  --color-pink-hot:    #FF3395;  /* #FF3395 */
+  --color-pink:        oklch(0.72 0.18 350);  /* #FF70B5 */
+  --color-pink-light:  oklch(0.82 0.12 350);  /* #FFADD5 */
+  --color-pink-lighter:oklch(0.96 0.03 350);  /* #FFEEF6 */
+
+  /* Yellow */
+  --color-yellow-darker: oklch(0.55 0.13 85); /* #8F7000 */
+  --color-yellow-dark:   oklch(0.78 0.17 85); /* #F0AD00 */
+  --color-yellow-hot:    oklch(0.9 0.2 95);   /* #FFDA00 */
+  --color-yellow:        oklch(0.93 0.15 95); /* #FFE967 */
+  --color-yellow-light:  oklch(0.96 0.08 95); /* #FFF3AD */
+  --color-yellow-lighter:oklch(0.98 0.03 95); /* #FFFBE1 */
+
+  /* Blue */
+  --color-blue-darker: oklch(0.28 0.06 240);  /* #07304B */
+  --color-blue-dark:   oklch(0.5 0.12 240);   /* #106BA8 */
+  --color-blue-hot:    oklch(0.65 0.15 240);  /* #1897EA */
+  --color-blue:        oklch(0.8 0.1 235);    /* #7CC3F3 */
+  --color-blue-light:  oklch(0.92 0.04 235);  /* #C7E5FA */
+  --color-blue-lighter:oklch(0.97 0.01 235);  /* #ECF6FD */
+
+  /* Green */
+  --color-green-darker: oklch(0.5 0.13 150);  /* #277C48 */
+  --color-green-dark:   oklch(0.65 0.16 150); /* #36AB63 */
+  --color-green-hot:    oklch(0.75 0.18 150); /* #48C577 */
+  --color-green:        oklch(0.85 0.12 150); /* #92DDAF */
+  --color-green-light:  oklch(0.94 0.08 150); /* #C0F6D6 */
+  --color-green-lighter:oklch(0.98 0.04 150); /* #E4FFEE */
+
+  /* Grey (neutrals) */
+  --color-grey-darker: oklch(0.15 0 0);       /* #181716 */
+  --color-grey-dark:   oklch(0.38 0 0);       /* #4D4C4C */
+  --color-grey-hot:    oklch(0.57 0 0);       /* #7E7E7E */
+  --color-grey:        oklch(0.77 0 0);       /* #BBBABA */
+  --color-grey-light:  oklch(0.91 0 0);       /* #E3E4E3 */
+  --color-grey-lighter:oklch(0.96 0 0);       /* #F3F3F3 */
+
+  /* Purple */
+  --color-purple-darker: oklch(0.32 0.2 295); /* #3A058A */
+  --color-purple-dark:   oklch(0.5 0.28 295); /* #6E13F6 */
+  --color-purple-hot:    oklch(0.62 0.22 295);/* #9D60F9 */
+  --color-purple:        oklch(0.78 0.14 295);/* #CFB0FC */
+  --color-purple-light:  oklch(0.92 0.06 295);/* #EBDEFF */
+  --color-purple-lighter:oklch(0.95 0.03 295);/* #F4EDFF */
+
+  /* Red */
+  --color-red-dark:   oklch(0.52 0.24 27);    /* #DE120E */
+  --color-red:        oklch(0.62 0.18 20);    /* #EA5C63 */
+  --color-red-light:  oklch(0.85 0.08 20);    /* #FFC1C1 */
+  --color-red-lighter:oklch(0.94 0.03 20);    /* #FFE5E5 */
+
+  /* ================= SEMANTIC ALIASES ================= */
+  --color-primary:          oklch(0.65 0.25 350); /* Pink hot — brand primary */
+  --color-primary-hover:    oklch(0.55 0.25 350);
+  --color-primary-active:   oklch(0.5 0.22 350);
+
+  /* Home care sub-brand (lime/chartreuse) */
+  --color-primary-homecare:       oklch(0.87 0.18 115); /* #CBE56A */
+  --color-primary-homecare-light: oklch(0.89 0.12 110); /* #D8E39A */
+
+  /* Secondary — teal (soap/water hint) */
+  --color-secondary:           oklch(0.78 0.12 185);   /* #5FCFCB */
+  --color-secondary-homecare:  oklch(0.77 0.08 295);   /* #C3B3D8 */
+
+  /* Utility */
+  --color-new-yellow:         oklch(0.9 0.2 95);
+  --color-new-star:           oklch(0.88 0.17 95);
+  --color-new-black:          oklch(0.22 0.01 60);
+  --color-light-yellow:       oklch(0.97 0.03 95);
+  --color-section-light-grey: oklch(0.95 0.01 200);
+  --color-light-grey:         oklch(0.91 0 0);
+  --color-white-grey:         oklch(0.98 0 0);
+  --color-orange:             oklch(0.78 0.12 45);
+  --color-light-orange:       oklch(0.94 0.03 60);
+  --color-light-pink:         oklch(0.88 0.05 30);
+
+  /* Foreground / background aliases */
+  --fg-1:          var(--color-grey-darker);   /* primary text */
+  --fg-2:          var(--color-grey-dark);     /* secondary text */
+  --fg-muted:      var(--color-grey-hot);      /* muted text */
+  --fg-on-primary: #ffffff;                    /* text on pink buttons */
+  --bg:            #ffffff;
+  --bg-surface:    var(--color-white-grey);    /* cards, panels */
+  --bg-section:    var(--color-section-light-grey);
+  --border:        var(--color-grey-light);
+
+  /* ================= TYPOGRAPHY ================= */
+  --font-body:    'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'GT-Ultra', 'Poppins', ui-sans-serif, system-ui, sans-serif;
+
+  /* Type ramp */
+  --text-xxs:  0.45rem;
+  --text-2xs:  0.625rem;  /* 10 */
+  --text-xs:   0.75rem;   /* 12 */
+  --text-sm:   0.875rem;  /* 14 */
+  --text-base: 1rem;      /* 16 */
+  --text-lg:   1.125rem;  /* 18 */
+  --text-xl:   1.25rem;   /* 20 */
+  --text-2xl:  1.5rem;    /* 24 */
+  --text-3xl:  1.875rem;  /* 30 */
+  --text-4xl:  2.25rem;   /* 36 */
+  --text-5xl:  3rem;      /* 48 */
+  --text-6xl:  3.75rem;   /* 60 */
+  --text-7xl:  4.5rem;    /* 72 */
+
+  /* ================= SPACING / RADIUS ================= */
+  --radius-sm:   0.25rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   1rem;
+  --radius-xl:   1.5rem;
+  --radius-full: 9999px;
+  --main-border-radius: 1rem;
+
+  /* Shadows — the system leans on hover-scale more than drop shadow */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+
+  /* Layout heights (mobile) */
+  --header-height:    3.4375rem; /* 55 */
+  --subheader-height: 3rem;      /* 48 */
+  --footer-height:    26.4375rem;
+}
+@media (min-width: 64rem) {
+  :root {
+    --header-height:    4.25rem;  /* 68 */
+    --subheader-height: 0rem;
+  }
+}
+
+/* ================= SEMANTIC ELEMENT STYLES ================= */
+
+html, body {
+  font-family: var(--font-body);
+  color: var(--fg-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 900;        /* GT-Ultra only ships Ultra */
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: var(--fg-1);
+  margin: 0;
+}
+h1 { font-size: clamp(2.25rem, 5vw, 3.75rem); }  /* 36 → 60 */
+h2 { font-size: clamp(1.875rem, 4vw, 3rem); }    /* 30 → 48 */
+h3 { font-size: var(--text-2xl); }               /* 24 */
+h4 { font-size: var(--text-xl); }                /* 20 */
+
+h5, h6 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  margin: 0;
+}
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); }
+
+p {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  color: var(--fg-1);
+  margin: 0;
+}
+.p-lead  { font-size: var(--text-lg);  line-height: 1.55; }
+.p-small { font-size: var(--text-sm);  line-height: 1.5; color: var(--fg-2); }
+.p-muted { color: var(--fg-muted); }
+
+small { font-size: var(--text-sm); color: var(--fg-muted); }
+
+code, pre, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+a { color: inherit; text-decoration: inherit; }
+a.link-primary { color: var(--color-primary); text-decoration: underline; text-underline-offset: 4px; }
+a.link-primary:hover { color: var(--color-primary-hover); }
+
+/* Utility classes mirroring Tailwind tokens, for raw HTML consumers */
+.font-display { font-family: var(--font-display); font-weight: 900; }
+.font-body    { font-family: var(--font-body); }
+
+.text-primary { color: var(--color-primary); }
+.bg-primary   { background: var(--color-primary); color: #fff; }
+.bg-pink-lighter { background: var(--color-pink-lighter); }
+.bg-yellow-lighter { background: var(--color-yellow-lighter); }
+.bg-blue-lighter   { background: var(--color-blue-lighter); }
+.bg-section        { background: var(--color-section-light-grey); }
